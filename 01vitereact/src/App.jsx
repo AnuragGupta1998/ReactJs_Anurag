@@ -1,9 +1,16 @@
 
+import Anurag from "./Anurag";
+import DisplayFun from './Display'
+
 
 function App() {
 
   return (
-    <h1> Chai Aur Code | Anurag</h1>
+    <>
+    <DisplayFun />
+    <Anurag />
+     <h1> Chai Aur Code in vite App()| Anurag</h1>
+    </>
   );
 }
 
