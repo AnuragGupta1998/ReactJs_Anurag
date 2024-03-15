@@ -19,12 +19,14 @@ function App() {
   //assignment to control the counter value between (0-20)......................
   //add value but not go above 20
   function addA(){
-    if(counter === 20){
+    if(counter === 31){
       alert('reached at highest value')
       return;
     }
     else{
       setCounter(counter+1);
+      // setCounter(counter=>counter+1);
+      // setCounter(counter=>counter+1);
     }
   }
  
@@ -35,7 +37,9 @@ function App() {
       return;
     }
     else{
-      setCounter(counter-1)
+         setCounter(counter-1)
+      // setCounter(counter=>counter-1)
+      // setCounter(counter=>counter-1)
     }
   }
 
