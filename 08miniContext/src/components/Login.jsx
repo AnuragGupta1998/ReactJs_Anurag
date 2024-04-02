@@ -1,7 +1,6 @@
 import React,{ useState,useContext } from "react" //useContex use to fetch value from context
 import UserContext from "../context/UserContext"
 
-
 function Login() {
 
     const [username,setUsername] = useState('')
@@ -12,7 +11,7 @@ function Login() {
 
     const handleSubmit=(e)=>{
 
-        e.preventDefault( )
+        e.preventDefault()
 
        setUser({username,password})
     }
