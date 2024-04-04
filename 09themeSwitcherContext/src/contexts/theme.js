@@ -3,8 +3,8 @@ import { useContext,createContext } from "react";
 //creating context of theme with default variable and functions..........
 export const ThemeContext=createContext({
     themeMode:"light",
-    darkTheme:()=>{},
-    lightTheme:()=>{},
+    darkTheme:() => {},
+    lightTheme:() => {},
 })
 
 //theme context provider................
