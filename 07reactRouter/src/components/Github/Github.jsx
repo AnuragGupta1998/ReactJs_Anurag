@@ -39,6 +39,7 @@ const dat=useLoaderData()
 }
 export default Github
 
+// fetching data from github API....
 export const githubInfoAPI= async () => {
 
     const response=await fetch('https://api.github.com/users/AnuragGupta1998');
