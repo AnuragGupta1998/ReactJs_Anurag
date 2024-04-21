@@ -14,6 +14,7 @@ export class Service {
 
         this.bucket = new Storage(this.client);
     }
+
     //createPost method......................................
     async createPost({ title, slug, content, featuredImage, status, userId }) {
 
@@ -92,26 +93,22 @@ export class Service {
     }
 
     //get Posts (all posts)............................................
-    async getPosts(queries = [Query.equal("status", "active")]) { 
+    async getPosts( queries = [Query.equal("status", "active")] ) { 
         try {
             return await this.databases.listDocuments(
                 conf.appwriteBucketId,  //database id
                 conf.appwriteCollectionId, //collection id
                 queries
             )
-
-        } catch (error) {
-            console.log("Appwrite service :: getPosts / all Post :: error", error)
+        } 
+        catch (error) {
+            console.log(" Appwrite service :: getPosts / all Post :: error ", error)
             return false;
-
         }
-
-
     }
 
-
-
 }
+
 //object of Service
 const service = new Service();
 
