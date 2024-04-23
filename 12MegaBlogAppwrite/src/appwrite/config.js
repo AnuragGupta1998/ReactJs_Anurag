@@ -22,7 +22,7 @@ export class Service {
 
         try {
             return await this.databases.createDocument(
-                conf.appwriteBucketId,
+                conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug,  //using as like unique ID
                 {
@@ -43,9 +43,9 @@ export class Service {
     async updatePost(slug, { title, content, featuredImage, status }) {  //slug using to identify which post will uodate
         try {
             return await this.databases.updateDocument(
-                conf.appwriteBucketId, //database id
+                conf.appwriteDatabaseId, //database id
                 conf.appwriteCollectionId, //coolection id
-                slug, //document id
+                slug, //using as id
                 {
                     title,
                     content,
@@ -61,11 +61,11 @@ export class Service {
     }
 
     //delete Post............................................
-    async deletePost(slug) {
+    async deletePost(slug) {   //using slug as id to delete
 
         try {
             await this.databases.deleteDocument(
-                conf.appwriteBucketId, //database id
+                conf.appwriteDatabaseId, //database id
                 conf.appwriteCollectionId, //coolection id
                 slug //document id
             )
@@ -79,10 +79,11 @@ export class Service {
     }
 
     //get Post (particular one post)...............................
-    async getPost(slug) {
+
+    async getPost(slug) {      //using slug as id to getPost
         try {
             return await this.databases.getDocument(
-                conf.appwriteBucketId, //database id
+                conf.appwriteDatabaseId, //database id
                 conf.appwriteCollectionId, //coolection id
                 slug //document id
             )
@@ -98,7 +99,7 @@ export class Service {
     async getPosts(queries = [Query.equal("status", "active")]) {
         try {
             return await this.databases.listDocuments(
-                conf.appwriteBucketId,  //database id
+                conf.appwriteDatabaseId,  //database id
                 conf.appwriteCollectionId, //collection id
                 queries
             )

@@ -1,6 +1,5 @@
-
 import './App.css'
-import {conf} from './conf/conf'
+import {conf} from './conf/conf.js'
 
 function App() {
   //accessing .enc file variable.................
