@@ -17,7 +17,7 @@ export class AuthService {
 
     //creating account by appwrite createAccount method .............................
     //Signup
-    async creatAccount({ email, password, name }) {
+    async createAccount({ email, password, name }) {
 
         try {
 
